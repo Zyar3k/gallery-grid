@@ -7,8 +7,9 @@ img {
 .wrapper-img {
   display: grid;
   grid-template-columns: 100%;
-  gap: 20px;
-  grid-auto-rows: 20px;
+  gap: 10px;
+  grid-row-gap: 10px;
+  grid-auto-rows: 10px;
 }
 
 @media (min-width: 640px) {

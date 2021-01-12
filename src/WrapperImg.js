@@ -17,15 +17,17 @@ const WrapperImg = ({ children }) => {
       getComputedStyle(wrapper).getPropertyValue("grid-row-gap")
     );
 
-    console.log(element);
+    // problem with getBoundingClientReact() !!!!!!!
+    // const spanValue = Math.ceil(
+    //   (element.getBoundingClientReact().height + rowGap) / (rowHeight + rowGap)
+    // );
+    const spanValue = Math.ceil(
+      (element.height + rowGap) / (rowHeight + rowGap)
+    );
 
-    // const spanValue =
-    //   Math.ceil(element.getBoundingClientReact().height + rowGap) /
-    //   (rowHeight + rowGap);
-
-    // if (spanValue) {
-    //   element.style.gridRowEnd = `span ${spanValue}`;
-    // }
+    if (spanValue) {
+      element.style.gridRowEnd = `span ${spanValue}`;
+    }
   };
 
   const resizeElements = () =>
@@ -51,9 +53,11 @@ const WrapperImg = ({ children }) => {
       });
     });
     observer.observe(wrapperRef.current, config);
+    window.addEventListener("resize", resizeElements);
 
     return () => {
       observer.disconnect();
+      window.removeEventListener("resize", resizeElements);
     };
   }, []);
 
