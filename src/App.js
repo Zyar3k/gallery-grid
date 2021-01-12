@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import WrapperImg from "./WrapperImg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <WrapperImg>
+      <img src='./assets/001.jpg' alt='color-img' />
+      <img src='./assets/002.jpg' alt='color-img' />
+      <img src='./assets/003.jpg' alt='color-img' />
+      <img src='./assets/004.jpg' alt='color-img' />
+      <img src='./assets/005.jpg' alt='color-img' />
+      <img src='./assets/006.jpg' alt='color-img' />
+      <img src='./assets/007.jpg' alt='color-img' />
+      <img src='./assets/008.jpg' alt='color-img' />
+      <img src='./assets/009.jpg' alt='color-img' />
+      <img src='./assets/010.jpg' alt='color-img' />
+      <img src='./assets/011.jpg' alt='color-img' />
+      <img src='./assets/012.jpg' alt='color-img' />
+      <img src='./assets/013.jpg' alt='color-img' />
+    </WrapperImg>
   );
 }
 
